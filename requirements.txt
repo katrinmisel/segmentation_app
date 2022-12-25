@@ -26,4 +26,3 @@ tensorflow-cpu
 #traitlets==5.6.0
 Werkzeug==2.2.2
 gunicorn
-libgl1
