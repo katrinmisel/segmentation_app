@@ -5,7 +5,8 @@ import segmentation_models as sm
 
 def getPrediction(filename):
 
-    my_model = load_model("unet_resnet34_augmented.h5", custom_objects={'focal_loss_plus_dice_loss': sm.losses.categorical_focal_dice_loss})
+    #my_model = load_model("unet_resnet34_augmented.h5", custom_objects={'focal_loss_plus_dice_loss': sm.losses.categorical_focal_dice_loss})
+    my_model = load_model("baseline.h5")
 
     original_image = cv2.resize(cv2.cvtColor(cv2.imread('static/images/' + filename), cv2.COLOR_BGR2RGB), (256,256))
     predicted_mask = my_model.predict(original_image.reshape(1,256,256,3))
